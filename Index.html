@@ -130,7 +130,7 @@
 
             height: 100vh;
             /*    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);*/
-            z-index: 9999;
+            z-index: 1009;
             float: left;
             background-color: #ECE7E1;
             display: block;
@@ -138,9 +138,7 @@
 
 
         .top-menu {
-
-            padding-top: 3rem;
-
+            text-align: center;
         }
 
         #menu-sidebar a {
@@ -184,19 +182,32 @@
 
         li {
             border-bottom: 1px solid #d9d9d9;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         .middle-menu {
+            border: 0px solid;
             position: fixed;
-            top: 50%;
+            top: 30%;
             width: 200px;
         }
 
         .bottom-menu {
             position: fixed;
-            top: 80%;
+            bottom: 0;
             width: 200px;
+            padding-bottom: 2rem;
 
+        }
+
+        #menuMobil {
+            width: 100vw;
+
+            height: 10%;
+            background: red;
+            position: fixed;
+            top: 0;
         }
 
 
@@ -205,15 +216,17 @@
 
         .logoBillede {
             margin: 0 auto;
-            background-image: url(image/logotest.png);
+            background-image: url(Logo/Logo-03.svg);
             background-size: contain;
             background-repeat: no-repeat;
-            height: 100px;
-            width: 80%;
+            height: 200px;
 
         }
 
-
+        .splash {
+            position: absolute;
+            top: 10%;
+        }
 
         .splashbillede {
             background-image: url(image/splash.jpg);
@@ -229,7 +242,197 @@
             background-size: cover;
         }
 
-        @media screen and (min-width:600px) {
+
+        .mySlides {
+            width: 100%;
+            animation-name: cf3FadeInOut;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-duration: 10s;
+            animation-direction: alternate;
+
+
+        }
+
+        @keyframes cf3FadeInOut {
+            0% {
+                opacity: 1;
+            }
+
+            45% {
+                opacity: 1;
+            }
+
+            55% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .container img {
+
+            /*  -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opacity 1s ease-in-out;
+            -o-transition: opacity 1s ease-in-out;*/
+            transition: opacity 1s ease-in-out;
+        }
+
+
+
+        .container img {
+
+            margin: 0 auto;
+
+
+
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .mySlides {
+            opacity: 1;
+
+            width: 100%;
+            height: auto;
+            transition: 0.8s ease;
+            backface-visibility: hidden;
+
+        }
+
+
+
+        .container:hover .mySlides {
+            transform: scale(0.94);
+            filter: brightness(0.6);
+        }
+
+        .burgermenu {
+            height: 10vh;
+            float: right;
+            padding-top: 25px;
+
+
+        }
+
+        .bar1,
+        .bar2 {
+            width: 35px;
+            height: 2px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .bar3 {
+            width: 35px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px);
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+
+
+        .logo {
+            width: 15%;
+            float: left;
+            top: -12px;
+            position: absolute;
+
+        }
+
+        .logo2 {
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            left: 280px;
+            top: 500px;
+            border: 2px solid black;
+            border-width: medium;
+            transform: scale(1.3);
+
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+
+
+        @media only screen and (min-width: 600px) {
+            .burgermenu {}
+
+
+
+            .container {
+                position: relative;
+                width: 100%;
+                margin: 10px;
+
+
+
+
+            }
+
+        }
+
+        @media only screen and (min-width: 800px) {
+
+
+
+            .logo {
+                width: 10%;
+                top: -30px;
+                position: absolute;
+                left: 16.5px;
+
+            }
+
+            .container {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+
+            .container img {
+                width: 86vw;
+                height: 90vh;
+                position: absolute;
+                right: 20px;
+            }
+
+
+
+
+
+        }
+
+
+        @media screen and (max-width:600px) {
             .data-container {
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: 300px 300px;
@@ -237,6 +440,14 @@
 
             }
 
+
+            main {
+                margin: 0 auto;
+            }
+
+            #menu-sidebar {
+                display: none;
+            }
 
 
             nav button {
@@ -250,6 +461,11 @@
 
         }
 
+        @media screen and (min-width:760px) {
+            menu-sidebar {
+                display: block;
+            }
+        }
 
         @media screen and (min-width:960px) {
             .data-container {
@@ -268,7 +484,6 @@
             }
 
         }
-
     </style>
 </head>
 
@@ -286,7 +501,6 @@
                     </div>
                     <div class="middle-menu">
                         <ul>
-
                             <li><a href="index.html" class="active">Forside</a></li>
                             <li><a href="cv.html">CV / Om Mig</a></li>
                             <li><a href="swissDesign.html">Swiss Design</a></li>
@@ -300,32 +514,23 @@
                             <li><a href="moleInfestedFarm.html">Spil Mole-farm</a></li>
                             <li><a href="sexOgSamfund.html">Sex & Samfund</a></li>
                         </ul>
-
-
                     </div>
 
                 </section>
 
-
-
-
-
                 <img id="menuknapMobil" src="Icons/Menu.svg" alt="burger menu ikon">
-                <section id="menuMobil" class="hidden">
-                    <div class="lolede">
-                        <img src="" alt="Logo"> </div>
-                    <a href="index.html" class="active">Forside</a>
-                    <a href="cv.html">CV / Om Mig</a>
-                    <a href="swissDesign.html">Swiss Design</a>
-                    <a href="moleInfestedFarm.html">Spil Mole-farm</a>
-                    <a href="sexOgSamfund.html">Sex & Samfund</a>
-                    <a href="nativeApp.html">Native App Kea</a>
-                    <a href="webPrototype.html">Webprototype Kea</a>
-                    <a href="aabenbarRedesign.html">Aabenbar Redesign</a>
-                    <a href="aabenbarVideo.html">Aabenbar Video</a>
+                <section id="menuMobil">
+                    <div class="burgermenu" onclick="clickMenu(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+
+                    </div>
                 </section>
             </nav>
         </header>
+
+
 
 
 
@@ -337,11 +542,24 @@
                 <button class="filter " data-kategori="hovedretter" ´>Hovedretter</button>
                 <button class="filter " data-kategori="desserter" ´>Desserter</button>
                 <button class="filter " data-kategori="drikkevarer" ´>Drikkevarer</button>
-            </nav>-->
+            </nav>
+
+            -->
+
 
 
         <main>
-            <div class="splashbillede"></div>
+            <section class="splash">
+                <div>
+
+                    <img class="mySlides" src="/image/mad1.jpg" alt="sild">
+                    <img class="mySlides" src="/image/mad2.jpg" alt="blomstermad">
+                    <img class="mySlides" src="/image/mad3.jpg" alt="makrel">
+
+
+                </div>
+            </section>
+            <!-- <div class="splashbillede"></div>-->
             <div id="popUp">
                 <button class="luk">X</button>
 
@@ -372,7 +590,39 @@
     </div>
 
 
+
+
+
     <script>
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {
+                slideIndex = 1
+            }
+            x[slideIndex - 1].style.display = "block";
+            setTimeout(carousel, 5000); // Change image every 5 seconds
+        }
+
+        function clickMenu(luk) {
+            luk.classList.toggle("change");
+        }
+
+
+
+
+
+
+
+
+
         let retter;
 
         let kategori = "alle";
@@ -454,9 +704,6 @@
         function lukSingle() {
             document.querySelector("#popUp").style.display = "none";
         }
-
     </script>
 
-</body>
-
-</html>
+</body></html>
