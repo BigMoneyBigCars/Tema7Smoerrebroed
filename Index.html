@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Signika:700|Work+Sans:300&display=swap" rel="stylesheet">
+    <title>Momoflotko</title>
+
+    <style>
+        html {
+            margin: 0 auto;
+        }
+
+        body {
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+
+
+        }
+
+        .data-container {
+            text-align: center;
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(1, 1fr);
+            margin: 0 auto;
+
+
+        }
+
+        article {}
+
+        a {
+            color: black;
+            font-size: 10px;
+        }
+
+
+        article:nth-child(even) {
+
+            background: #fadede;
+        }
+
+        article:nth-child(odd) {
+
+            background: #e3ddf7;
+        }
+
+
+        header {
+            height: 0vh;
+        }
+
+
+
+        #popUp {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            background: rgba(180, 173, 173, 0.77);
+            display: none;
+            text-align: center;
+
+        }
+
+        #popUp .billede {
+            width: 50%;
+
+
+        }
+
+        .indhold {
+            width: 60vw;
+            min-height: 50vh;
+            background: #fff;
+            margin: 4rem auto;
+            padding: 10px;
+        }
+
+
+        .luk {
+            position: fixed;
+            right: 0;
+            font-size: 2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .bistro {
+            position: fixed;
+            z-index: -1;
+        }
+
+
+        nav {}
+
+        button {
+            min-width: 50px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+            padding: 5px;
+            border-radius: 10%;
+            border-bottom-style: groove;
+            background: rgba(250, 255, 231, 0);
+            border-color: rgba(240, 248, 255, 0);
+            font-size: 10px;
+            color: black;
+
+        }
+
+
+
+        .valgt {
+            color: black;
+            background-color: white;
+
+        }
+
+
+        #menu-sidebar {
+            position: fixed;
+            width: 200px;
+
+            height: 100vh;
+            /*    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);*/
+            z-index: 9999;
+            float: left;
+            background-color: #ECE7E1;
+            display: block;
+        }
+
+
+        .top-menu {
+
+            padding-top: 3rem;
+
+        }
+
+        #menu-sidebar a {
+            text-decoration: none;
+            transition: 0.3s;
+            font-family: 'Open Sans', sans-serif;
+            padding-left: 20px;
+            font-size: 14px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+
+        #menu-sidebar a:hover {
+            color: #f85858;
+
+            box-shadow: -5px 18px 22px -20px rgba(0, 0, 0, 0.9);
+            transform: scale(1.1);
+            filter: brightness(1.5);
+            left: 5%;
+        }
+
+        #menu-sidebar a.active,
+        #menuMobil a.active {
+            color: #f85858;
+
+        }
+
+        main {
+            margin-left: 200px;
+
+            background-color: #ffffff;
+        }
+
+        ul {
+            margin: 0 auto;
+
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            border-bottom: 1px solid #d9d9d9;
+        }
+
+        .middle-menu {
+            position: fixed;
+            top: 50%;
+            width: 200px;
+        }
+
+        .bottom-menu {
+            position: fixed;
+            top: 80%;
+            width: 200px;
+
+        }
+
+
+
+        #wrapper {}
+
+        .logoBillede {
+            margin: 0 auto;
+            background-image: url(image/logotest.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100px;
+            width: 80%;
+
+        }
+
+
+
+        .splashbillede {
+            background-image: url(image/splash.jpg);
+
+            width: 100%;
+            /* Used if the image is unavailable */
+            height: 500px;
+            /* You must set a specified height */
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Do not repeat the image */
+            background-size: cover;
+        }
+
+        @media screen and (min-width:600px) {
+            .data-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 300px 300px;
+
+
+            }
+
+
+
+            nav button {
+                min-width: 100px;
+                margin: 0 auto;
+                font-size: 15px;
+                margin-left: 8px;
+                margin-right: 8px;
+                color: white;
+            }
+
+        }
+
+
+        @media screen and (min-width:960px) {
+            .data-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid
+            }
+
+
+            nav button {
+                min-width: 150px;
+                margin: 0 auto;
+                font-size: 33px;
+                margin-left: 20px;
+                margin-right: 20px;
+                color: white;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <header>
+            <nav>
+                <section id="menu-sidebar">
+                    <div class="top-menu">
+                        <div class="logoBillede">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <div class="middle-menu">
+                        <ul>
+
+                            <li><a href="index.html" class="active">Forside</a></li>
+                            <li><a href="cv.html">CV / Om Mig</a></li>
+                            <li><a href="swissDesign.html">Swiss Design</a></li>
+                            <li><a href="moleInfestedFarm.html">Spil Mole-farm</a></li>
+                            <li><a href="sexOgSamfund.html">Sex & Samfund</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="bottom-menu">
+                        <ul socials>
+                            <li><a href="moleInfestedFarm.html">Spil Mole-farm</a></li>
+                            <li><a href="sexOgSamfund.html">Sex & Samfund</a></li>
+                        </ul>
+
+
+                    </div>
+
+                </section>
+
+
+
+
+
+                <img id="menuknapMobil" src="Icons/Menu.svg" alt="burger menu ikon">
+                <section id="menuMobil" class="hidden">
+                    <div class="lolede">
+                        <img src="" alt="Logo"> </div>
+                    <a href="index.html" class="active">Forside</a>
+                    <a href="cv.html">CV / Om Mig</a>
+                    <a href="swissDesign.html">Swiss Design</a>
+                    <a href="moleInfestedFarm.html">Spil Mole-farm</a>
+                    <a href="sexOgSamfund.html">Sex & Samfund</a>
+                    <a href="nativeApp.html">Native App Kea</a>
+                    <a href="webPrototype.html">Webprototype Kea</a>
+                    <a href="aabenbarRedesign.html">Aabenbar Redesign</a>
+                    <a href="aabenbarVideo.html">Aabenbar Video</a>
+                </section>
+            </nav>
+        </header>
+
+
+
+        <!--
+
+            <nav>
+                <button class="filter valgt" data-kategori="alle" ´>Alle</button>
+                <button class="filter " data-kategori="forretter" ´>Forretter</button>
+                <button class="filter " data-kategori="hovedretter" ´>Hovedretter</button>
+                <button class="filter " data-kategori="desserter" ´>Desserter</button>
+                <button class="filter " data-kategori="drikkevarer" ´>Drikkevarer</button>
+            </nav>-->
+
+
+        <main>
+            <div class="splashbillede"></div>
+            <div id="popUp">
+                <button class="luk">X</button>
+
+                <div class="lukPopUp">
+                    <section class="indhold">
+                        <article class="enkeltRet">
+                            <img class="billede" src="" alt="">
+                            <h2></h2>
+                            <p class="pris"></p>
+                            <p class="lang"></p>
+                        </article>
+                    </section>
+                </div>
+            </div>
+
+
+
+            <section class="data-container"></section>
+            <template>
+                <article>
+                    <img src="" alt="">
+                    <h2></h2>
+                    <p class="pris"></p>
+                    <p class="kort"></p>
+                </article>
+            </template>
+        </main>
+    </div>
+
+
+    <script>
+        let retter;
+
+        let kategori = "alle";
+
+        const container = document.querySelector(".data-container");
+
+        const temp = document.querySelector("template");
+
+        const article = document.querySelector(".enkeltperson");
+
+        document.addEventListener("DOMContentLoaded", getJson);
+
+        async function getJson() {
+
+            let jsonData = await fetch("https://spreadsheets.google.com/feeds/list/17Dd7DvkPaFamNUdUKlrFgnH6POvBJXac7qyiS6zNRw0/od6/public/values?alt=json");
+            console.log("jsonData", jsonData);
+
+            retter = await jsonData.json();
+
+            console.log("retter", retter);
+            visRetter();
+            addEventListenerToButtons();
+        }
+
+
+        function visRetter() {
+            container.innerHTML = "";
+            retter.feed.entry.forEach((ret) => {
+                if (kategori == "alle" || kategori == ret.gsx$kategori.$t) {
+                    const klon = temp.cloneNode(true).content;
+                    klon.querySelector("h2").textContent = ret.gsx$navn.$t;
+                    klon.querySelector("img").src = `imgs/large/${ret.gsx$billede.$t}.jpg`;
+                    klon.querySelector("img").alt = ret.gsx$billede.$t;
+                    klon.querySelector(".pris").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
+                    klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
+
+                    container.appendChild(klon);
+                    container.lastElementChild.addEventListener("click", () => {
+                        visSingle(ret)
+                    });
+                }
+            })
+        }
+
+        function addEventListenerToButtons() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+        }
+
+
+        function filtrering() {
+            console.log(filtrering);
+            kategori = this.dataset.kategori;
+            document.querySelectorAll("button").forEach(knap => {
+                knap.classList.remove("valgt")
+            })
+            this.classList.add("valgt");
+            visRetter();
+        }
+
+        function visSingle(ret) {
+
+            document.querySelector("#popUp").style.display = "block";
+            document.querySelector("#popUp .luk").addEventListener("click", lukSingle);
+            document.querySelector("#popUp .lukPopUp").addEventListener("click", lukSingle);
+
+            document.querySelector(".enkeltRet h2").textContent = ret.gsx$navn.$t;
+            document.querySelector(".enkeltRet .billede").src = `imgs/small/${ret.gsx$billede.$t}-sm.jpg`;
+            document.querySelector(".enkeltRet .billede").alt = ret.gsx$navn.$t;
+            document.querySelector(".pris").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
+            document.querySelector(".lang").textContent = ret.gsx$lang.$t;
+        }
+
+        function lukSingle() {
+            document.querySelector("#popUp").style.display = "none";
+        }
+
+        function lukSingle() {
+            document.querySelector("#popUp").style.display = "none";
+        }
+
+    </script>
+
+</body>
+
+</html>
