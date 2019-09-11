@@ -29,8 +29,8 @@ header {
     /*    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);*/
     z-index: 1009;
     float: left;
-    background-color: #ECE7E1;
-    display: block;
+    background-color: #f2f1f1;
+    display: none;
 }
 
 
@@ -110,16 +110,28 @@ li {
 
 #menuMobil {
     width: 100vw;
-    height: 10%;
-    background: red;
-    position: fixed;
-    top: 0;
+    height: 300px;
+    background-color: #f2f1f1;
+    z-index: 5000;
+
+}
+
+.menumobil {
+    width: 100vw;
+    height: 300px;
+    background-color: #c34747;
+    z-index: 5000;
+
 }
 
 .burgermenu {
+    width: 100vw;
     height: 10vh;
     float: right;
+    padding-left: 20px;
     padding-top: 25px;
+    background-color: #f2f1f1;
+    text-align: right;
 }
 
 .bar1,
@@ -129,6 +141,7 @@ li {
     background-color: #333;
     margin: 6px 0;
     transition: 0.4s;
+
 }
 
 .bar3 {
@@ -177,15 +190,20 @@ li {
 /* Grid struktur og main start  */
 
 main {
-    margin-left: 200px;
+    margin: 0 auto;
+
     background-color: #ffffff;
 }
+
+
+
 
 .data-container {
     text-align: center;
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 300px 300px;
     margin: 0 auto;
 }
 
@@ -270,37 +288,13 @@ button {
 
 
 /* Splash billede START */
-.container img {
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
-}
 
-.container img {
-    margin: 0 auto;
-}
 
-.container {
+#splash {
     width: 100%;
-}
 
-.splash {
-    position: absolute;
-    top: 10%;
-}
 
-.splashbillede {
-    background-image: url(image/splash.jpg);
-    width: 100%;
-    /* Used if the image is unavailable */
-    height: 500px;
-    /* You must set a specified height */
-    background-position: center;
-    /* Center the image */
-    background-repeat: no-repeat;
-    /* Do not repeat the image */
-    background-size: cover;
+
 }
 
 
@@ -355,10 +349,46 @@ button {
         margin: 10px;
     }
 
+    main {
+        margin-left: 200px;
+    }
+
+    #menu-sidebar {
+        display: block;
+    }
+
+    .data-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 300px 300px;
+    }
+
+    #menuMobil {
+        display: none;
+    }
+
+    #menu-sidebar a {
+        font-size: 18px;
+        margin: 20px;
+        padding-top: 5vh;
+
+    }
+
+    #menu-siderbar li {
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
 }
 
-@media only screen and (min-width: 800px) {
-    .logo {
+@media only screen and (min-width: 900px) {
+
+
+    .data-container {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    /*   .logo {
         width: 10%;
         top: -30px;
         position: absolute;
@@ -376,19 +406,17 @@ button {
         height: 90vh;
         position: absolute;
         right: 20px;
-    }
+    }*/
 }
 
 
-@media screen and (max-width:600px) {
+/*@media screen and (max-width:600px) {
     .data-container {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: 300px 300px;
     }
 
-    main {
-        margin: 0 auto;
-    }
+
 
     #menu-sidebar {
         display: none;
@@ -404,19 +432,11 @@ button {
         color: white;
     }
 
-}
+}*/
 
-@media screen and (min-width:760px) {
-    menu-sidebar {
-        display: block;
-    }
-}
 
 @media screen and (min-width:960px) {
-    .data-container {
-        grid-template-columns: repeat(1, 1fr);
-        grid
-    }
+
 
 
     nav button {
