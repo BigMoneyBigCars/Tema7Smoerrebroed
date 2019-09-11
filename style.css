@@ -1,0 +1,433 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0 auto;
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+
+
+header {
+    height: 0vh;
+}
+
+/* Menu desktop -menu-sidebar- START */
+
+#menu-sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    /*    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);*/
+    z-index: 1009;
+    float: left;
+    background-color: #ECE7E1;
+    display: block;
+}
+
+
+.top-menu {
+    text-align: center;
+}
+
+#menu-sidebar a {
+    text-decoration: none;
+    transition: 0.3s;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 20px;
+
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: black;
+    font-size: 10px;
+}
+
+
+#menu-sidebar a:hover {
+    color: #f85858;
+
+    box-shadow: -5px 18px 22px -20px rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+    filter: brightness(1.5);
+    left: 5%;
+}
+
+#menu-sidebar a.active,
+#menuMobil a.active {
+    color: #f85858;
+
+}
+
+ul {
+    margin: 0 auto;
+
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    border-bottom: 1px solid #d9d9d9;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.middle-menu {
+    border: 0px solid;
+    position: fixed;
+    top: 30%;
+    width: 200px;
+}
+
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    width: 200px;
+    padding-bottom: 2rem;
+
+}
+
+
+.logoBillede {
+    margin: 0 auto;
+    background-image: url(Logo/Logo-03.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+
+}
+
+
+/* Menu desktop -menu-sidebar- SLUT */
+/* Menu Mobil START */
+
+#menuMobil {
+    width: 100vw;
+    height: 10%;
+    background: red;
+    position: fixed;
+    top: 0;
+}
+
+.burgermenu {
+    height: 10vh;
+    float: right;
+    padding-top: 25px;
+}
+
+.bar1,
+.bar2 {
+    width: 35px;
+    height: 2px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.bar3 {
+    width: 35px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.logo {
+    width: 15%;
+    float: left;
+    top: -12px;
+    position: absolute;
+}
+
+.logo2 {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    left: 280px;
+    top: 500px;
+    border: 2px solid black;
+    border-width: medium;
+    transform: scale(1.3);
+}
+
+
+/* Menu Mobil SLUT */
+
+/* Grid struktur og main start  */
+
+main {
+    margin-left: 200px;
+    background-color: #ffffff;
+}
+
+.data-container {
+    text-align: center;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 auto;
+}
+
+.indhold {
+    width: 60vw;
+    min-height: 50vh;
+    background: #fff;
+    margin: 4rem auto;
+    padding: 10px;
+}
+
+article:nth-child(even) {
+
+    background: #fadede;
+}
+
+article:nth-child(odd) {
+
+    background: #e3ddf7;
+}
+
+
+
+/* Grid struktur og main SLUT */
+
+/* Pop op vindue START */
+
+#popUp {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background: rgba(180, 173, 173, 0.77);
+    display: none;
+    text-align: center;
+}
+
+#popUp .billede {
+    width: 50%;
+
+}
+
+.luk {
+    position: fixed;
+    right: 0;
+    font-size: 2rem;
+}
+
+
+/* Pop op vindue SlUT */
+
+
+/* filtrering START */
+
+
+.hidden {
+    display: none;
+}
+
+
+button {
+    min-width: 50px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 5px;
+    border-radius: 10%;
+    border-bottom-style: groove;
+    background: rgba(250, 255, 231, 0);
+    border-color: rgba(240, 248, 255, 0);
+    font-size: 10px;
+    color: black;
+
+}
+
+
+.valgt {
+    color: black;
+    background-color: white;
+}
+
+/* filtrering SLUT */
+
+
+/* Splash billede START */
+.container img {
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.container img {
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+}
+
+.splash {
+    position: absolute;
+    top: 10%;
+}
+
+.splashbillede {
+    background-image: url(image/splash.jpg);
+    width: 100%;
+    /* Used if the image is unavailable */
+    height: 500px;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+}
+
+
+.mySlides {
+    width: 100%;
+    animation-name: cf3FadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-direction: alternate;
+}
+
+@keyframes cf3FadeInOut {
+    0% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.mySlides {
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    transition: 0.8s ease;
+    backface-visibility: hidden;
+}
+
+.container:hover .mySlides {
+    transform: scale(0.94);
+    filter: brightness(0.6);
+}
+
+/* Splash billede SLUT */
+
+/* media queries START */
+@media only screen and (min-width: 600px) {
+
+    .container {
+        position: relative;
+        width: 100%;
+        margin: 10px;
+    }
+
+}
+
+@media only screen and (min-width: 800px) {
+    .logo {
+        width: 10%;
+        top: -30px;
+        position: absolute;
+        left: 16.5px;
+    }
+
+    .container {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .container img {
+        width: 86vw;
+        height: 90vh;
+        position: absolute;
+        right: 20px;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .data-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 300px 300px;
+    }
+
+    main {
+        margin: 0 auto;
+    }
+
+    #menu-sidebar {
+        display: none;
+    }
+
+
+    nav button {
+        min-width: 100px;
+        margin: 0 auto;
+        font-size: 15px;
+        margin-left: 8px;
+        margin-right: 8px;
+        color: white;
+    }
+
+}
+
+@media screen and (min-width:760px) {
+    menu-sidebar {
+        display: block;
+    }
+}
+
+@media screen and (min-width:960px) {
+    .data-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid
+    }
+
+
+    nav button {
+        min-width: 150px;
+        margin: 0 auto;
+        font-size: 33px;
+        margin-left: 20px;
+        margin-right: 20px;
+        color: white;
+    }
+
+}
+
+/* media queries SLUT */
