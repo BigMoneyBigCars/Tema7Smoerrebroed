@@ -17,7 +17,7 @@ img {
 
 
 header {
-    height: 0vh;
+    min-height: 10px;
 }
 
 /* Menu desktop -menu-sidebar- START */
@@ -96,41 +96,122 @@ li {
 
 
 .logoBillede {
-    margin: 0 auto;
+
     background-image: url(Logo/Logo-03.svg);
     background-size: contain;
     background-repeat: no-repeat;
     height: 200px;
+    width: 50px;
 
+
+}
+
+.MenuMobilBox {
+    text-align: center;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px;
+    background-image: url(navbillede/nav.jpg);
+    width: 100vw;
+    height: 100px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.flex {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+
+    height: 100px;
+    width: 100%;
+}
+
+.logoBilledeMobil {
+
+    background-image: url(Logo/logo-03.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 6000;
+
+
+}
+
+.navBillede {
+
+    background-image: url(navbillede/nav.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
 }
 
 
 /* Menu desktop -menu-sidebar- SLUT */
 /* Menu Mobil START */
 
+
+nav {
+    width: 100vw;
+    min-height: 10px;
+}
+
+#mobil-top-Menu {
+    display: block;
+    justify-content: space-around;
+
+    width: 100vw;
+    min-height: 100px;
+    z-index: 9999;
+    background-color: #f2f1f1;
+
+}
+
+#mobil-top-Menu img {
+    width: 80%;
+}
+
+
+.test {
+    width: 100px;
+    height: 100px;
+
+    padding-left: 20px;
+    padding-top: 25px;
+    background-color: #f2f1f1;
+    text-align: right;
+}
+
 #menuMobil {
     width: 100vw;
     height: 300px;
     background-color: #f2f1f1;
     z-index: 5000;
-
+    position: absolute;
+    top: 50px;
 }
 
-.menumobil {
-    width: 100vw;
-    height: 300px;
-    background-color: #c34747;
-    z-index: 5000;
-
+#menuMobil a {
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    line-height: 2;
 }
 
 .burgermenu {
-    width: 100vw;
-    height: 10vh;
+
+    margin-bottom: 20px;
+
     float: right;
-    padding-left: 20px;
-    padding-top: 25px;
-    background-color: #f2f1f1;
+
     text-align: right;
 }
 
@@ -138,18 +219,21 @@ li {
 .bar2 {
     width: 35px;
     height: 2px;
-    background-color: #333;
+    background-color: #ffffff;
     margin: 6px 0;
     transition: 0.4s;
+
 
 }
 
 .bar3 {
     width: 35px;
     height: 3px;
-    background-color: #333;
+    background-color: #ffffff;
     margin: 6px 0;
     transition: 0.4s;
+
+
 }
 
 .change .bar1 {
@@ -295,7 +379,9 @@ button {
 
 
 
+
 }
+
 
 
 .mySlides {
@@ -362,7 +448,7 @@ button {
         grid-template-rows: 300px 300px;
     }
 
-    #menuMobil {
+    #mobil-top-Menu {
         display: none;
     }
 
@@ -435,7 +521,7 @@ button {
 }*/
 
 
-@media screen and (min-width:960px) {
+/*@media screen and (min-width:960px) {
 
 
 
@@ -448,6 +534,6 @@ button {
         color: white;
     }
 
-}
+}*/
 
 /* media queries SLUT */

@@ -35,16 +35,56 @@
                 </div>
             </section>
 
-            <section id="menuMobil">
+            <section id="mobil-top-Menu">
+                <div class="MenuMobilBox">
 
-                <!--<img id="menuknapMobil" src="Icons/Menu.svg" alt="burger menu ikon">-->
-                <div class="burgermenu" onclick="clickMenu(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
+
+
+
+                    <div class="item flex">
+                        <img src="Logo/loogogogogo.gif" alt="dd">
+                    </div>
+
+                    <div class="item flex">
+                        <a href="kontakt.html">
+                            <p>Om os</p>
+                        </a>
+                    </div>
+
+                    <div class="item flex">
+                        <a href="kontakt.html">
+                            <p>Kontakt</p>
+                        </a>
+                    </div>
+
+                    <div class="item flex ">
+                        <div class="burgermenu " onclick="clickMenu(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </div>
                 </div>
 
+                <section id="menuMobil" class="hidden">
+                    <a href="index.html" class="active">Forside</a>
+                    <a href="cv.html">CV / Om Mig</a>
+                    <a href="swissDesign.html">Swiss Design</a>
+                    <a href="moleInfestedFarm.html">Spil Mole-farm</a>
+                    <a href="sexOgSamfund.html">Sex & Samfund</a>
+                    <a href="nativeApp.html">Native App Kea</a>
+                    <a href="webPrototype.html">Webprototype Kea</a>
+                    <a href="aabenbarRedesign.html">Aabenbar Redesign</a>
+                    <a href="aabenbarVideo.html">Aabenbar Video</a>
+                </section>
             </section>
+
+
+
+
+
+
+
         </nav>
     </header>
     <!--
@@ -58,14 +98,15 @@
             </nav>
 
             -->
+    <section id="splash">
+        <div class="container">
+            <img class="mySlides" src="Splashbillede/splaaash.jpg" alt="sild">
+            <img class="mySlides" src="Splashbillede/splaash.jpg" alt="blomstermad">
+            <img class="mySlides" src="/Splashbillede/splash.jpg" alt="makrel">
+        </div>
+    </section>
     <main>
-        <section id="splash">
-            <div>
-                <img class="mySlides" src="/image/mad1.jpg" alt="sild">
-                <img class="mySlides" src="/image/mad2.jpg" alt="blomstermad">
-                <img class="mySlides" src="/image/mad3.jpg" alt="makrel">
-            </div>
-        </section>
+
 
         <div id="popUp">
             <button class="luk">X</button>
@@ -135,6 +176,10 @@
             retter = await jsonData.json();
 
             console.log("retter", retter);
+
+
+            document.querySelector(".burgermenu").addEventListener("click", toggleMenu);
+
             visRetter();
             addEventListenerToButtons();
         }
@@ -195,6 +240,26 @@
 
         function lukSingle() {
             document.querySelector("#popUp").style.display = "none";
+        }
+
+
+
+        //Mobil burgermmenu //
+
+
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#menuMobil").classList.toggle("hidden");
+
+            let erSkjult = document.querySelector("#menuMobil").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.getElementById("menuknapMobil").src = "Icons/Menu.svg";
+            } else {
+
+                document.getElementById("menuknapMobil").src = "icons/No.svg";
+
+            }
         }
     </script>
 
