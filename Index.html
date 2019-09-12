@@ -107,6 +107,34 @@
     </section>
     <main>
 
+        <article class="koed">
+            <div class="kategoriBillede">
+                <h1></h1>
+                <p></p>
+            </div>
+        </article>
+        <article class="vegetar">
+            <div class="kategoriBillede">
+                <h1></h1>
+                <p></p>
+            </div>
+        </article>
+        <article class="veganer">
+            <div class="kategoriBillede">
+                <h1></h1>
+                <p></p>
+            </div>
+        </article>
+        <article class="drikkevarer">
+            <div class="kategoriBillede">
+                <h1></h1>
+                <p></p>
+            </div>
+        </article>
+
+
+
+
 
         <div id="popUp">
             <button class="luk">X</button>
@@ -121,6 +149,7 @@
                 </section>
             </div>
         </div>
+
         <section class="data-container"></section>
         <template>
             <article>
@@ -131,8 +160,6 @@
             </article>
         </template>
     </main>
-
-
     <script>
         var slideIndex = 0;
         carousel();
@@ -170,7 +197,7 @@
 
         async function getJson() {
 
-            let jsonData = await fetch("https://spreadsheets.google.com/feeds/list/17Dd7DvkPaFamNUdUKlrFgnH6POvBJXac7qyiS6zNRw0/od6/public/values?alt=json");
+            let jsonData = await fetch("https://spreadsheets.google.com/feeds/list/1cefgRhGLAPtoKEFyd5789ovjTWE4wHkzxEAenmD291M/od6/public/values?alt=json");
             console.log("jsonData", jsonData);
 
             retter = await jsonData.json();
@@ -191,7 +218,7 @@
                 if (kategori == "alle" || kategori == ret.gsx$kategori.$t) {
                     const klon = temp.cloneNode(true).content;
                     klon.querySelector("h2").textContent = ret.gsx$navn.$t;
-                    klon.querySelector("img").src = `imgs/large/${ret.gsx$billede.$t}.jpg`;
+                    klon.querySelector("img").src = `img/billede/${ret.gsx$billede.$t}.png`;
                     klon.querySelector("img").alt = ret.gsx$billede.$t;
                     klon.querySelector(".pris").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
                     klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
@@ -203,6 +230,7 @@
                 }
             })
         }
+
 
         function addEventListenerToButtons() {
             document.querySelectorAll(".filter").forEach(elm => {
@@ -222,7 +250,6 @@
         }
 
         function visSingle(ret) {
-
             document.querySelector("#popUp").style.display = "block";
             document.querySelector("#popUp .luk").addEventListener("click", lukSingle);
             document.querySelector("#popUp .lukPopUp").addEventListener("click", lukSingle);
