@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
+
+
+
 
 html {
     margin: 0 auto;
@@ -97,7 +101,7 @@ li {
 
 .logoBillede {
 
-    background-image: url(Logo/Logo-03.svg);
+    background-image: url(Logo/loogogogogo.gif);
     background-size: contain;
     background-repeat: no-repeat;
     height: 200px;
@@ -109,10 +113,10 @@ li {
 .MenuMobilBox {
     text-align: center;
     display: grid;
-    grid-gap: 0px;
+    grid-gap: 10px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 100px;
-    background-image: url(navbillede/nav.jpg);
+    background-image: url(navbillede/navbillede.jpg);
     width: 100vw;
     height: 100px;
     background-position: bottom;
@@ -176,6 +180,7 @@ nav {
 #mobil-top-Menu img {
     width: 80%;
 }
+
 
 
 .test {
@@ -279,7 +284,21 @@ main {
     background-color: #ffffff;
 }
 
+article {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
+main article {
+    display: block;
+}
+
+#kategori-container {
+
+    display: grid;
+    grid-template-columns: repeat (1, 1fr);
+    grid-auto-rows: auto;
+}
 
 
 .data-container {
@@ -299,12 +318,12 @@ main {
     padding: 10px;
 }
 
-article:nth-child(even) {
+main article:nth-child(even) {
 
     background: #fadede;
 }
 
-article:nth-child(odd) {
+main article:nth-child(odd) {
 
     background: #e3ddf7;
 }
@@ -374,8 +393,37 @@ button {
 /* Splash billede START */
 
 
+/* Menu desktop -menu-sidebar- SLUT */
+/* Menu Mobil START */
+/* overskrift på splash billede */
+
+#overskrift {
+    position: absolute;
+    top: 110px;
+    left: 10px;
+    color: snow;
+    font-size: 2rem;
+    text-transform: uppercase;
+
+
+}
+
+#paragraphtxt {
+    position: absolute;
+    top: 150px;
+    left: 12px;
+    line-height: 15px;
+    color: aliceblue;
+    font-size: 0.9rem;
+
+}
+
+/* overskrift på splash slut */
+
 #splash {
     width: 100%;
+    margin-top: 5px;
+
 
 
 
@@ -417,6 +465,7 @@ button {
     height: auto;
     transition: 0.8s ease;
     backface-visibility: hidden;
+    filter: brightness(0.4);
 }
 
 .container:hover .mySlides {
@@ -432,7 +481,7 @@ button {
     .container {
         position: relative;
         width: 100%;
-        margin: 10px;
+
     }
 
     main {
@@ -466,23 +515,77 @@ button {
 
 }
 
+article {
+    min-height: 300px;
+    display: flex;
 
-.kategoriBillede {
-    background-image: url(img/billede/sild.png);
+}
+
+article h1 {
+    font-size: 3rem;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 auto;
+    align-self: center;
+    font-weight: bold;
+}
+
+.Billede {
     background-size: cover;
     width: 100%;
     min-height: 300px;
     background-position: center;
     background-repeat: no-repeat;
+
 }
+
+.koedbillede {
+    background-image: url(billede/k%C3%B8d.png);
+
+}
+
+.fiskbillede {
+    background-image: url(billede/fisk.png);
+
+
+}
+
+.vegetarbillede {
+    background-image: url(billede/vegetar.png);
+
+}
+
+.drikkevarerbillede {
+    background-image: url(billede/drikkevarer.png);
+
+}
+
 
 @media only screen and (min-width: 900px) {
 
 
     .data-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
 
     }
+
+    #kategori-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        grid-gap: 20px;
+        margin-left: 200px;
+    }
+
+
+
+
+
+    #splash {
+        margin-left: 200px;
+    }
+
+
 
     /*   .logo {
         width: 10%;
