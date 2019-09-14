@@ -1,10 +1,8 @@
+/* Overordnede generelle indstillinger START  */
 * {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-
-
-
 
 html {
     margin: 0 auto;
@@ -19,10 +17,15 @@ img {
     width: 100%;
 }
 
-
 header {
     min-height: 10px;
 }
+
+.hidden {
+    display: none;
+}
+
+/* Overordnede generelle indstillinger SLUT  */
 
 /* Menu desktop -menu-sidebar- START */
 
@@ -37,51 +40,30 @@ header {
     display: none;
 }
 
-
-.top-menu {
-    text-align: center;
-}
-
 #menu-sidebar a {
     text-decoration: none;
     transition: 0.3s;
     font-family: 'Open Sans', sans-serif;
     padding-left: 20px;
-
     padding-top: 2px;
     padding-bottom: 2px;
     color: black;
     font-size: 10px;
 }
 
-
 #menu-sidebar a:hover {
     color: #f85858;
-
     box-shadow: -5px 18px 22px -20px rgba(0, 0, 0, 0.9);
     transform: scale(1.1);
     filter: brightness(1.5);
     left: 5%;
 }
 
-#menu-sidebar a.active,
-#menuMobil a.active {
-    color: #f85858;
 
+.top-menu {
+    text-align: center;
 }
 
-ul {
-    margin: 0 auto;
-
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    border-bottom: 1px solid #d9d9d9;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
 .middle-menu {
     border: 0px solid;
@@ -95,20 +77,34 @@ li {
     bottom: 0;
     width: 200px;
     padding-bottom: 2rem;
-
 }
 
+ul {
+    margin: 0 auto;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    border-bottom: 1px solid #d9d9d9;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 .logoBillede {
-
     background-image: url(Logo/loogogogogo.gif);
     background-size: contain;
     background-repeat: no-repeat;
     height: 200px;
     width: 50px;
-
-
 }
+
+
+
+/* Menu desktop -menu-sidebar- SLUT */
+/* Menu Mobil START */
+
+#mobil-top-Menu {}
 
 .MenuMobilBox {
     text-align: center;
@@ -122,75 +118,13 @@ li {
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
-.flex {
-    display: flex;
+nav {}
 
-    justify-content: center;
-    align-items: center;
-}
-
-.item {
-
-    height: 100px;
-    width: 100%;
-}
-
-.logoBilledeMobil {
-
-    background-image: url(Logo/logo-03.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 6000;
-
-
-}
-
-.navBillede {
-
-    background-image: url(navbillede/nav.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100vw;
-}
-
-
-/* Menu desktop -menu-sidebar- SLUT */
-/* Menu Mobil START */
-
-
-nav {
-    width: 100vw;
-    min-height: 10px;
-}
-
-#mobil-top-Menu {
-    display: block;
-    justify-content: space-around;
-
-    width: 100vw;
-    min-height: 100px;
-    z-index: 9999;
-    background-color: #f2f1f1;
-
-}
 
 #mobil-top-Menu img {
     width: 80%;
-}
-
-
-
-.test {
-    width: 100px;
-    height: 100px;
-
-    padding-left: 20px;
-    padding-top: 25px;
-    background-color: #f2f1f1;
-    text-align: right;
 }
 
 #menuMobil {
@@ -212,14 +146,12 @@ nav {
 }
 
 .burgermenu {
-
     margin-bottom: 20px;
-
     float: right;
-
     text-align: right;
 }
 
+/* de tre div'er som bliver til burgermenu knappen */
 .bar1,
 .bar2 {
     width: 35px;
@@ -227,8 +159,6 @@ nav {
     background-color: #ffffff;
     margin: 6px 0;
     transition: 0.4s;
-
-
 }
 
 .bar3 {
@@ -237,10 +167,9 @@ nav {
     background-color: #ffffff;
     margin: 6px 0;
     transition: 0.4s;
-
-
 }
 
+/* animation fra burgermenu til kryds */
 .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
@@ -255,51 +184,34 @@ nav {
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
-.logo {
-    width: 15%;
-    float: left;
-    top: -12px;
-    position: absolute;
-}
-
-.logo2 {
-    width: 200px;
-    height: 100px;
-    position: absolute;
-    left: 280px;
-    top: 500px;
-    border: 2px solid black;
-    border-width: medium;
-    transform: scale(1.3);
-}
-
-
 /* Menu Mobil SLUT */
 
 /* Grid struktur og main start  */
 
 main {
     margin: 0 auto;
-
     background-color: #ffffff;
 }
 
-article {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 main article {
+    /* bruges til de ting der bliver hentet ind fra sheet */
     display: block;
 }
 
-#kategori-container {
+article {
+    /* bruges til mad-kategori billeder, som er articles udenfor main */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    min-height: 300px;
+    display: flex;
+}
 
+
+#kategori-container {
     display: grid;
     grid-template-columns: repeat (1, 1fr);
     grid-auto-rows: auto;
 }
-
 
 .data-container {
     text-align: center;
@@ -310,25 +222,66 @@ main article {
     margin: 0 auto;
 }
 
-.indhold {
-    width: 60vw;
-    min-height: 50vh;
-    background: #fff;
-    margin: 4rem auto;
-    padding: 10px;
+
+/* sætter flex på og aligner center så al tekst står i midten af billederne på forside kategorierne */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-main article:nth-child(even) {
+.item {
+    height: 100px;
+    width: 100%;
+}
 
+
+
+main article:nth-child(even) {
+    /* skal nok bare slettes hvis vi ikke vil bruge den */
     background: #fadede;
 }
 
 main article:nth-child(odd) {
-
+    /* skal nok bare slettes hvis vi ikke vil bruge den */
     background: #e3ddf7;
 }
 
 
+article h1 {
+    font-size: 3rem;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 auto;
+    align-self: center;
+    font-weight: bold;
+}
+
+/* De forskellige billeder til forsiden */
+
+.Billede {
+    background-size: cover;
+    width: 100%;
+    min-height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.koedbillede {
+    background-image: url(billede/k%C3%B8d.png);
+}
+
+.fiskbillede {
+    background-image: url(billede/fisk.png);
+}
+
+.vegetarbillede {
+    background-image: url(billede/vegetar.png);
+}
+
+.drikkevarerbillede {
+    background-image: url(billede/drikkevarer.png);
+}
 
 /* Grid struktur og main SLUT */
 
@@ -344,9 +297,16 @@ main article:nth-child(odd) {
     text-align: center;
 }
 
+.indhold {
+    width: 60vw;
+    min-height: 50vh;
+    background: #fff;
+    margin: 4rem auto;
+    padding: 10px;
+}
+
 #popUp .billede {
     width: 50%;
-
 }
 
 .luk {
@@ -355,31 +315,11 @@ main article:nth-child(odd) {
     font-size: 2rem;
 }
 
-
 /* Pop op vindue SlUT */
 
 
-/* filtrering START */
+/* filtrering START    gør vist ikke noget */
 
-
-.hidden {
-    display: none;
-}
-
-
-button {
-    min-width: 50px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    padding: 5px;
-    border-radius: 10%;
-    border-bottom-style: groove;
-    background: rgba(250, 255, 231, 0);
-    border-color: rgba(240, 248, 255, 0);
-    font-size: 10px;
-    color: black;
-
-}
 
 
 .valgt {
@@ -390,12 +330,9 @@ button {
 /* filtrering SLUT */
 
 
-/* Splash billede START */
 
 
-/* Menu desktop -menu-sidebar- SLUT */
-/* Menu Mobil START */
-/* overskrift på splash billede */
+/* overskrift på splash billede  start*/
 
 #overskrift {
     position: absolute;
@@ -404,8 +341,6 @@ button {
     color: snow;
     font-size: 2rem;
     text-transform: uppercase;
-
-
 }
 
 #paragraphtxt {
@@ -415,7 +350,6 @@ button {
     line-height: 15px;
     color: aliceblue;
     font-size: 0.9rem;
-
 }
 
 /* overskrift på splash slut */
@@ -423,14 +357,7 @@ button {
 #splash {
     width: 100%;
     margin-top: 5px;
-
-
-
-
-
 }
-
-
 
 .mySlides {
     width: 100%;
@@ -481,7 +408,6 @@ button {
     .container {
         position: relative;
         width: 100%;
-
     }
 
     main {
@@ -505,64 +431,15 @@ button {
         font-size: 18px;
         margin: 20px;
         padding-top: 5vh;
-
     }
 
     #menu-siderbar li {
         padding-top: 20px;
         margin-top: 20px;
     }
-
 }
-
-article {
-    min-height: 300px;
-    display: flex;
-
-}
-
-article h1 {
-    font-size: 3rem;
-    color: white;
-    text-transform: uppercase;
-    margin: 0 auto;
-    align-self: center;
-    font-weight: bold;
-}
-
-.Billede {
-    background-size: cover;
-    width: 100%;
-    min-height: 300px;
-    background-position: center;
-    background-repeat: no-repeat;
-
-}
-
-.koedbillede {
-    background-image: url(billede/k%C3%B8d.png);
-
-}
-
-.fiskbillede {
-    background-image: url(billede/fisk.png);
-
-
-}
-
-.vegetarbillede {
-    background-image: url(billede/vegetar.png);
-
-}
-
-.drikkevarerbillede {
-    background-image: url(billede/drikkevarer.png);
-
-}
-
 
 @media only screen and (min-width: 900px) {
-
 
     .data-container {
         grid-template-columns: repeat(2, 1fr);
@@ -578,75 +455,12 @@ article h1 {
     }
 
 
-
-
-
     #splash {
         margin-left: 200px;
     }
 
-
-
-    /*   .logo {
-        width: 10%;
-        top: -30px;
-        position: absolute;
-        left: 16.5px;
-    }
-
-    .container {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-    }
-
-    .container img {
-        width: 86vw;
-        height: 90vh;
-        position: absolute;
-        right: 20px;
-    }*/
 }
 
 
-/*@media screen and (max-width:600px) {
-    .data-container {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: 300px 300px;
-    }
-
-
-
-    #menu-sidebar {
-        display: none;
-    }
-
-
-    nav button {
-        min-width: 100px;
-        margin: 0 auto;
-        font-size: 15px;
-        margin-left: 8px;
-        margin-right: 8px;
-        color: white;
-    }
-
-}*/
-
-
-/*@media screen and (min-width:960px) {
-
-
-
-    nav button {
-        min-width: 150px;
-        margin: 0 auto;
-        font-size: 33px;
-        margin-left: 20px;
-        margin-right: 20px;
-        color: white;
-    }
-
-}*/
 
 /* media queries SLUT */
