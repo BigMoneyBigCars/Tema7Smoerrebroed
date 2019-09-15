@@ -208,12 +208,14 @@ article {
 
 
 #kategori-container {
+    /* mad kategorierne */
     display: grid;
     grid-template-columns: repeat (1, 1fr);
     grid-auto-rows: auto;
 }
 
 .data-container {
+    /* container til de articles der printes fra sheetet */
     text-align: center;
     display: grid;
     grid-gap: 5px;
@@ -310,6 +312,7 @@ article h1 {
 }
 
 .luk {
+    /* luk knappen */
     position: fixed;
     right: 0;
     font-size: 2rem;
@@ -318,9 +321,7 @@ article h1 {
 /* Pop op vindue SlUT */
 
 
-/* filtrering START    gør vist ikke noget */
-
-
+/* filtrering START   gør ikke noget pt. */
 
 .valgt {
     color: black;
