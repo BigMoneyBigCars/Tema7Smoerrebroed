@@ -7,6 +7,7 @@
     <title>New Nordic Kitchen</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -28,7 +29,7 @@
                     </ul>
                 </div>
                 <div class="bottom-menu">
-                    <ul socials>
+                    <ul>
                         <li><a href="index.html">Om Os</a></li>
                         <li><a href="index.html">Kontakt</a> </li>
                     </ul>
@@ -38,18 +39,21 @@
             <section id="mobil-top-Menu">
                 <div class="MenuMobilBox">
                     <div class="item flex">
-                        <img src="Logo/loogogogogo.gif" alt="dd">
+                        <a href="Index.html">
+                            <img src="Logo/loogogogogo.gif" alt="dd">
+                        </a>
+
                     </div>
                     <div class="item flex">
-                        <p><a href="kontakt.html"> Om os </a>
+                        <p><a href="kontakt.html"></a>
                     </div>
                     <div id="forside" data-kategori="alle" class="item flex">
                         <p><a href="Index.html">
-                                Forside
+
                             </a></p>
                     </div>
                     <div class="item flex ">
-                        <div class="burgermenu " onclick="clickMenu(this)">
+                        <div id="burgermenu" class="burgermenu" onclick="clickMenu(this)">
                             <div class="bar1"></div>
                             <div class="bar2"></div>
                             <div class="bar3"></div>
@@ -58,13 +62,13 @@
                 </div>
                 <section id="menuMobil" class="hidden">
                     <ul id="menu"></ul>
-                    <li><a href="index.html" class="active">Forside</a></li>
-                    <li><a class="filter" data-kategori="Kød">Kød</a></li>
-                    <li><a class="filter" data-kategori="Fisk">Fisk</a></li>
-                    <li><a class="filter" data-kategori="Vegetar">Vegetar</a></li>
-                    <li><a class="filter" data-kategori="drikkevarer">Drikkevarer</a></li>
-                    <li><a href="index.html">Om Os</a></li>
-                    <li><a href="index.html">Kontakt</a></li>
+                    <li><a href="index.html" class="active resetMenu">Forside</a></li>
+                    <li><a class="filter resetMenu" data-kategori="Kød" onclick="clickMenu(this)">Kød</a></li>
+                    <li><a class="filter resetMenu" data-kategori="Fisk">Fisk</a></li>
+                    <li><a class="filter resetMenu" data-kategori="Vegetar">Vegetar</a></li>
+                    <li><a class="filter resetMenu" data-kategori="drikkevarer">Drikkevarer</a></li>
+                    <li><a href="index.html" class="resetMenu">Om Os</a></li>
+                    <li><a href="index.html" class="resetMenu">Kontakt</a></li>
                 </section>
             </section>
         </nav>
@@ -107,23 +111,47 @@
                     <article class="enkeltRet">
                         <img class="billede" src="" alt="">
                         <h2></h2>
-                        <p class="pris"></p>
                         <p class="kort"></p>
+                        <p class="pris"></p>
+
                     </article>
                 </section>
             </div>
         </div>
         <!--/* data-container og articles der bliver printet i JS ud fra googlesheet. */-->
-        <section class="data-container"></section>
+        <section id="data-container" class="data-container"></section>
         <template>
             <article>
                 <img src="" alt="">
                 <h2></h2>
                 <p class="pris"></p>
+                <!--
                 <p class="kort"></p>
+-->
             </article>
         </template>
     </main>
+
+    <footer>
+        <section id="footerSection">
+            <h1></h1>
+            <div class="socials">
+                <div class="socialBox">
+                    <a href="index.html" class="fa fa-facebook"></a>
+                    <a href="index.html" class="fa fa-google"></a>
+                    <a href="index.html" class="fa fa-instagram"></a>
+
+
+                </div>
+                <!-- <img src="socialIkoner/facebook.png">
+                <img src="socialIkoner/instagram.png">
+                <img src="socialIkoner/twitter.png">-->
+
+
+            </div>
+            <p></p>
+        </section>
+    </footer>
     <script>
         // Splash billede MySlides function der skifter billede efter tid. //
         var slideIndex = 0;
@@ -147,6 +175,7 @@
         // er i tvivl om den bruges??
         function clickMenu(luk) {
             luk.classList.toggle("change");
+
         }
 
         // erklæring af variabler, sætter konstante variabler til at være lig containere, loader Json på DOMload.
@@ -163,7 +192,7 @@
         document.addEventListener("DOMContentLoaded", getJson);
 
 
-        //  Erklærer JsonData til vores google sheeet, sætter eventlisterningers på burgermenu og forside knap, og på mad-kategori billederne på forsiden.
+        // Erklærer JsonData til vores google sheeet, sætter eventlisterningers på burgermenu og forside knap, og på mad-kategori billederne på forsiden.
         async function getJson() {
 
             let jsonData = await fetch("https://spreadsheets.google.com/feeds/list/1cefgRhGLAPtoKEFyd5789ovjTWE4wHkzxEAenmD291M/od6/public/values?alt=json");
@@ -178,17 +207,45 @@
             document.querySelector("#forside").addEventListener("click", menuForside);
 
             addEventListenerToButtons();
+            addEventListenerToresetMenu();
+            menuForside();
+            footer();
         };
 
         //Forside knap der viser alle mad kategorier og fjerner data-container/de filterede mad kategorier fra forsiden
 
+
+        function addEventListenerToresetMenu() {
+            document.querySelectorAll(".resetMenu").forEach(elm => {
+                elm.addEventListener("click", ResetMenuen);
+            })
+
+        }
+
+        function ResetMenuen() {
+            document.querySelector("#menuMobil").classList.add("hidden");
+
+            document.querySelector("#burgermenu").classList.remove("change");
+            document.querySelector(".bar1").classList.toggle("black");
+            document.querySelector(".bar2").classList.toggle("black");
+            document.querySelector(".bar3").classList.toggle("black");
+
+
+            /*
+                        document.querySelector(".burgermenu").style.display = "block";*/
+
+        }
+
         function menuForside() {
-            document.getElementById("koed").style.display = "block";
-            document.getElementById("vegetar").style.display = "block";
-            document.getElementById("fisk").style.display = "block";
-            document.getElementById("drikkevarer").style.display = "block";
+            console.log("menu forside funktion");
+            document.getElementById("koed").style.display = "flex";
+            document.getElementById("vegetar").style.display = "flex";
+            document.getElementById("fisk").style.display = "flex";
+            document.getElementById("drikkevarer").style.display = "flex";
             document.getElementById("splash").style.display = "block";
+
             document.querySelector(".data-container").style.display = "none";
+
 
         }
 
@@ -212,7 +269,9 @@
                     klon.querySelector("img").src = `billede/${ret.gsx$billede.$t}.png`;
                     klon.querySelector("img").alt = ret.gsx$billede.$t;
                     klon.querySelector(".pris").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
-                    klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
+                    /*
+                                        klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
+                    */
 
                     // skjuler forside mad-kategorierne når der trykkes ind i kategorierne. Lavet på den her måde, så alt vises på én index.html side, istedet for at have flere html'er.
                     document.getElementById("koed").style.display = "none";
@@ -270,24 +329,24 @@
             document.querySelector("#popUp").style.display = "none";
         }
 
-
         //Mobil burgermmenu //
 
         // toggler classen hidden, som er display:none, menuen i mobil.
         function toggleMenu() {
             console.log("toggleMenu");
             document.querySelector("#menuMobil").classList.toggle("hidden");
-
-            let erSkjult = document.querySelector("#menuMobil").classList.contains("hidden");
-
-            /* if (erSkjult == true) {
-                 document.getElementById("menuknapMobil").src = "Icons/Menu.svg";
-             } else {
-
-                 document.getElementById("menuknapMobil").src = "icons/No.svg";
-
-             }*/
+            document.querySelector(".bar1").classList.toggle("black");
+            document.querySelector(".bar2").classList.toggle("black");
+            document.querySelector(".bar3").classList.toggle("black");
         }
+
+        function footer() {
+            document.querySelector("#footerSection h1").textContent = "Følg os på";
+            document.querySelector("#footerSection p").textContent = "@Copyright Peter Påskehare";
+
+
+
+        };
 
         // tekst på forside mad-kategorierne
         document.querySelector("#koed h1").textContent = "Kød";
@@ -303,5 +362,7 @@
         document.getElementById("overskrift").innerHTML = "Højbelagt smørrebrød";
         document.getElementById("paragraphtxt").innerHTML = "Elsker du også smørrebrød? Om du er til de gode gamle klassikere, <br> eller gerne vil have et valg? - om du kun er til det grønne, eller hvis <br>du bare har lyst til lidt af det hele!";
     </script>
+
+
 
 </body></html>
