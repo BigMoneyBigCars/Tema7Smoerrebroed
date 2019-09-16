@@ -26,13 +26,20 @@
                         <li><a class="filter" data-kategori="Fisk">Fisk</a></li>
                         <li><a class="filter" data-kategori="Vegetar">Vegetar</a></li>
                         <li><a class="filter" data-kategori="drikkevarer">Drikkevarer</a></li>
-                    </ul>
-                </div>
-                <div class="bottom-menu">
-                    <ul>
                         <li><a href="index.html">Om Os</a></li>
                         <li><a href="index.html">Kontakt</a> </li>
                     </ul>
+                </div>
+                <div class="bottom-menu">
+                    <div class="socialsDesktop">
+                        <p></p>
+                        <div class="socialBox">
+
+                            <a href="index.html" class="fa fa-facebook"></a>
+                            <a href="index.html" class="fa fa-google"></a>
+                            <a href="index.html" class="fa fa-instagram"></a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -52,7 +59,7 @@
 
                             </a></p>
                     </div>
-                    <div class="item flex ">
+                    <div class="item flex">
                         <div id="burgermenu" class="burgermenu" onclick="clickMenu(this)">
                             <div class="bar1"></div>
                             <div class="bar2"></div>
@@ -105,9 +112,10 @@
     <main>
         <!--/* pop up vindue  */-->
         <div id="popUp">
-            <button class="luk">X</button>
+
             <div class="lukPopUp">
                 <section class="indhold">
+                    <button class="luk">X</button>
                     <article class="enkeltRet">
                         <img class="billede" src="" alt="">
                         <h2></h2>
@@ -149,6 +157,8 @@
 
 
             </div>
+            <p></p>
+            <p></p>
             <p></p>
         </section>
     </footer>
@@ -260,7 +270,7 @@
         //Functionen der kloner alle articles som hentes fra google sheetet.
 
         function visRetter() {
-            document.querySelector(".data-container").style.display = "block";
+            document.querySelector(".data-container").style.display = "grid";
             container.innerHTML = "";
             retter.feed.entry.forEach((ret) => {
                 if (kategori == "alle" || kategori == ret.gsx$kategori.$t) {
@@ -342,7 +352,12 @@
 
         function footer() {
             document.querySelector("#footerSection h1").textContent = "Følg os på";
-            document.querySelector("#footerSection p").textContent = "@Copyright Peter Påskehare";
+            document.querySelector("#footerSection p").textContent = "@Copyright";
+            document.querySelector("#footerSection p+p").textContent = "All Rights Reserved";
+            document.querySelector("#footerSection p+p+p").tepxtContent = "@Copyright All Rights Reserved";
+            document.querySelector(".bottom-menu p").textContent = "Følg os på";
+
+
 
 
 
