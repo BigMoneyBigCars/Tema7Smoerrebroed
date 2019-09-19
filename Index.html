@@ -8,72 +8,78 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="favIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favIcons/favicon-16x16.png">
+    <link rel="manifest" href="favIcons/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#b0cba5">
 </head>
 
 <body class="baggrundsbillede">
-    <div>
-        <header>
-            <nav>
-                <section id="menu-sidebar">
-                    <div class="top-menu">
-                        <a href="index.html">
-                            <div class="logoBillede">
-                                <img src="" alt="">
-                            </div>
+    <header>
+        <nav>
+            <section id="menu-sidebar">
+                <!--Menu'en i desktop, indtil i top, middle, kontakt, og bottom-->
+                <div class="top-menu">
+                    <a href="index.html">
+                        <div class="logoBillede">
+                            <img src="" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="middle-menu">
+                    <ul>
+                        <li><a href="index.html" class="">Forside</a></li>
+                        <li><a class="filter" data-kategori="Kød">Kød</a></li>
+                        <li><a class="filter" data-kategori="Fisk">Fisk</a></li>
+                        <li><a class="filter" data-kategori="Vegetar">Vegetar</a></li>
+                        <li><a class="filter" data-kategori="drikkevarer">Drikkevarer</a></li>
+                    </ul>
+                </div>
+                <div id="kontakt-menu" class="kontakt-menu">
+                    <ul>
+                        <li><a href="index.html">Om Os</a></li>
+                        <li><a href="index.html">Kontakt</a> </li>
+                    </ul>
+                </div>
+                <div class="bottom-menu">
+                    <div class="socialsDesktop">
+                        <p></p>
+                        <div id="socialBox" class="socialBox">
+                            <a href="index.html" class="fa fa-facebook"></a>
+                            <a href="index.html" class="fa fa-google"></a>
+                            <a href="index.html" class="fa fa-instagram"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="mobil-top-Menu">
+                <!--Mobil menu starter-->
+                <div class="MenuMobilBox">
+                    <div class="item flex">
+                        <a href="Index.html">
+                            <img src="Logo/Logo.svg" alt="dd">
                         </a>
                     </div>
-                    <div class="middle-menu">
-                        <ul>
-                            <li><a href="index.html" class="">Forside</a></li>
-                            <li><a class="filter" data-kategori="Kød">Kød</a></li>
-                            <li><a class="filter" data-kategori="Fisk">Fisk</a></li>
-                            <li><a class="filter" data-kategori="Vegetar">Vegetar</a></li>
-                            <li><a class="filter" data-kategori="drikkevarer">Drikkevarer</a></li>
-                        </ul>
+                    <div class="item flex">
+                        <p><a href="kontakt.html"></a>
                     </div>
-                    <div id="kontakt-menu" class="kontakt-menu">
-                        <ul>
-                            <li><a href="index.html">Om Os</a></li>
-                            <li><a href="index.html">Kontakt</a> </li>
-                        </ul>
+                    <div data-kategori="alle" class="item flex">
+                        <p><a href="Index.html"></a></p>
                     </div>
-                    <div class="bottom-menu">
-                        <div class="socialsDesktop">
-                            <p></p>
-                            <div id="socialBox" class="socialBox">
-                                <a href="index.html" class="fa fa-facebook"></a>
-                                <a href="index.html" class="fa fa-google"></a>
-                                <a href="index.html" class="fa fa-instagram"></a>
-                            </div>
+                    <div class="item flex">
+                        <div id="burgermenu" class="burgermenu" onclick="clickMenu(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
                         </div>
                     </div>
-                </section>
-                <section id="mobil-top-Menu">
-                    <div class="MenuMobilBox">
-                        <div class="item flex">
-                            <a href="Index.html">
-                                <img src="Logo/Logo.svg" alt="dd">
-                            </a>
-                        </div>
-                        <div class="item flex">
-                            <p><a href="kontakt.html"></a>
-                        </div>
-                        <div id="forside" data-kategori="alle" class="item flex">
-                            <p><a href="Index.html"></a></p>
-                        </div>
-                        <div class="item flex">
-                            <div id="burgermenu" class="burgermenu" onclick="clickMenu(this)">
-                                <div class="bar1"></div>
-                                <div class="bar2"></div>
-                                <div class="bar3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <section id="menuMobil" class="hidden">
-                        <ul id="menu"></ul>
-
-
+                </div>
+                <!--Mobil menu listen som vises efter tryk på burgermenu'en -->
+                <section id="menuMobil" class="hidden">
+                    <ul id="menu">
                         <li> <a href="index.html" class=" resetMenu"><img src="Logo/Logo.svg" alt="logo"></a></li>
                         <li><a href="index.html" class=" resetMenu">Forside</a></li>
                         <li><a class="filter resetMenu" data-kategori="Kød" onclick="clickMenu(this)">Kød</a></li>
@@ -82,298 +88,308 @@
                         <li><a class="filter resetMenu" data-kategori="drikkevarer">Drikkevarer</a></li>
                         <li><a href="index.html" class="resetMenu">Om Os</a></li>
                         <li><a href="index.html" class="resetMenu">Kontakt</a></li>
-                    </section>
+                    </ul>
                 </section>
-            </nav>
-        </header>
-        <!--/* Splash billede container */-->
-        <section id="splash">
-            <div class="container">
-                <img class="mySlides" src="Splashbillede/splaaash.jpg" alt="sild">
-                <img class="mySlides" src="Splashbillede/splaash.jpg" alt="blomstermad">
-                <img class="mySlides" src="Splashbillede/splash.jpg" alt="makrel">
-                <h1 id="overskrift"></h1>
-                <p id="paragraphtxt"></p>
-            </div>
-        </section>
-        <!--/* mad-kategori containere */-->
-        <section id="kategori-container">
-            <article id="koed" class="filter koedbillede Billede  " data-kategori="Kød">
-                <h1></h1>
-                <p></p>
-            </article>
-            <article id="fisk" class="filter fiskbillede Billede " data-kategori="Fisk">
-                <h1></h1>
-                <p></p>
-            </article>
-            <article id="vegetar" class="filter vegetarbillede Billede " data-kategori="Vegetar">
-                <h1></h1>
-                <p></p>
-            </article>
-            <article id="drikkevarer" class="filter drikkevarerbillede Billede " data-kategori="drikkevarer">
-                <h1></h1>
-                <p></p>
-            </article>
-        </section>
-        <main>
-            <!--/* pop up vindue  */-->
-            <div id="popUp">
-                <div class="lukPopUp">
-                    <section class=" indhold">
-                        <article class="enkeltRet indholdBillede">
-                            <div class="popUpDesktop ">
-                                <a href="index.html"><img src="Logo/Logo.svg" alt="logo"></a>
-                                <p class="kortDesktop"></p>
-                                <p class="prisDesktop"></p>
-                            </div>
-                            <div class="popUpMobil">
-                                <div class="logoBillede  "></div>
-                                <img class="billede" src="" alt="">
-                                <h2></h2>
-                                <p class="kort"></p>
-                                <p class="pris"></p>
-                                <div class="buttonContainer">
-                                    <button class="køb"></button>
-                                    <button class="anuller"></button>
-                                </div>
-                                <button class="luk">X</button>
-                            </div>
-                        </article>
-                    </section>
-                </div>
-            </div>
-            <!--/* data-container og articles der bliver printet i JS ud fra googlesheet. */-->
-            <section id="data-container" class="data-container "></section>
-            <template>
-                <article>
-                    <h2></h2>
-                    <div class="billedeContainer"><img src="" alt=""></div>
-                    <p class="pris"></p>
-                </article>
-            </template>
-        </main>
-        <footer>
-            <section id="footerSection">
-                <h1></h1>
-                <div class="socials">
-                    <div class="socialBox">
-                        <a href="" class="fa fa-facebook"></a>
-                        <a href="index.html" class="fa fa-google"></a>
-                        <a href="index.html" class="fa fa-instagram"></a>
-                    </div>
-                </div>
-                <p></p>
-                <p></p>
-                <p></p>
             </section>
-        </footer>
-        <script>
-            // erklæring af variabler, sætter konstante variabler til at være lig containere, loader Json på DOMload.
-            let retter;
+        </nav>
+    </header>
+    <!--/* Splash billede container */-->
+    <section id="splash">
+        <div class="container">
+            <img class="mySlides" src="Splashbillede/splaaash.jpg" alt="sild">
+            <img class="mySlides" src="Splashbillede/splaash.jpg" alt="blomstermad">
+            <img class="mySlides" src="Splashbillede/splash.jpg" alt="makrel">
+            <h1 id="overskrift"></h1>
+            <p id="paragraphtxt"></p>
+        </div>
+    </section>
+    <!--/* mad-kategori containere */-->
+    <section id="kategori-container">
+        <article id="koed" class="filter koedbillede Billede  " data-kategori="Kød">
+            <h1></h1>
+            <p></p>
+        </article>
+        <article id="fisk" class="filter fiskbillede Billede " data-kategori="Fisk">
+            <h1></h1>
+            <p></p>
+        </article>
+        <article id="vegetar" class="filter vegetarbillede Billede " data-kategori="Vegetar">
+            <h1></h1>
+            <p></p>
+        </article>
+        <article id="drikkevarer" class="filter drikkevarerbillede Billede " data-kategori="drikkevarer">
+            <h1></h1>
+            <p></p>
+        </article>
+    </section>
+    <main>
+        <!--/* pop up vindue  */-->
+        <div id="popUp">
+            <div class="lukPopUp">
+                <section class=" indhold">
+                    <article class="enkeltRet indholdBillede">
+                        <!--/* en div i popup viduet, som kun vises i desktop  */-->
+                        <div class="popUpDesktop ">
+                            <a href="index.html"><img src="Logo/Logo.svg" alt="logo"></a>
+                            <p class="kortDesktop"></p>
+                            <p class="prisDesktop"></p>
+                        </div>
+                        <!--/* det generelle popup vindue  */-->
+                        <div class="popUpMobil">
+                            <div class="logoBillede  "></div>
+                            <img class="billede" src="" alt="">
+                            <h2></h2>
+                            <p class="kort"></p>
+                            <p class="pris"></p>
+                            <div class="buttonContainer">
+                                <button class="køb"></button>
+                                <button class="anuller"></button>
+                            </div>
+                            <button class="luk">X</button>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+        <!--/* data-container og articles der bliver printet i JS ud fra googlesheet. */-->
+        <section id="data-container" class="data-container "></section>
+        <template>
+            <article>
+                <h2></h2>
+                <div class="billedeContainer"><img src="" alt=""></div>
+                <p class="pris"></p>
+            </article>
+        </template>
+    </main>
+    <!--/* Footer section  */-->
+    <footer>
+        <section id="footerSection">
+            <h1></h1>
+            <div class="socials">
+                <div class="socialBox">
+                    <a href="" class="fa fa-facebook"></a>
+                    <a href="index.html" class="fa fa-google"></a>
+                    <a href="index.html" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <p></p>
+            <p></p>
+            <p></p>
+        </section>
+    </footer>
+    <!--  <script>
+        // erklæring af variabler, sætter konstante variabler til at være lig containere, loader Json på DOMload.
+        let retter;
 
-            let kategori = "alle";
+        let kategori = "alle";
 
-            var slideIndex = 0;
+        var slideIndex = 0;
 
-            const container = document.querySelector(".data-container");
+        const container = document.querySelector(".data-container");
 
-            const temp = document.querySelector("template");
+        const temp = document.querySelector("template");
 
-            const article = document.querySelector(".enkeltperson");
+        const article = document.querySelector(".enkeltperson");
 
-            document.addEventListener("DOMContentLoaded", getJson);
+        // hvis dom er loaded, kaldes getJson
+        document.addEventListener("DOMContentLoaded", getJson);
 
-            // Erklærer JsonData til vores google sheeet, sætter eventlisterningers på burgermenu og forside knap, og på mad-kategori billederne på forsiden.
-            async function getJson() {
+        // Erklærer JsonData til vores google sheeet, sætter eventlisterningers på burgermenu og på mad-kategori billederne på forsiden.
+        async function getJson() {
 
-                let jsonData = await fetch("https://spreadsheets.google.com/feeds/list/1cefgRhGLAPtoKEFyd5789ovjTWE4wHkzxEAenmD291M/od6/public/values?alt=json");
-                console.log("jsonData", jsonData);
+            let jsonData = await fetch("https://spreadsheets.google.com/feeds/list/1cefgRhGLAPtoKEFyd5789ovjTWE4wHkzxEAenmD291M/od6/public/values?alt=json");
+            console.log("jsonData", jsonData);
 
-                retter = await jsonData.json();
+            retter = await jsonData.json();
 
-                console.log("retter", retter);
+            console.log("retter", retter);
 
-                document.querySelector(".burgermenu").addEventListener("click", toggleMenu);
+            document.querySelector(".burgermenu").addEventListener("click", toggleMenu);
 
-                document.querySelector("#forside").addEventListener("click", menuForside);
+            carousel();
+            addEventListenerToButtons();
+            addEventListenerToresetMenu();
+            menuForside();
+            footer();
 
-                addEventListenerToButtons();
-                addEventListenerToresetMenu();
-                menuForside();
-                footer();
-                carousel();
-            };
-            // Splash billede MySlides function der skifter billede efter tid. //
+        };
+        // Splash billede MySlides function der skifter billede efter tid. //
 
-            function carousel() {
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {
+                slideIndex = 1
+            }
+            x[slideIndex - 1].style.display = "block";
+            setTimeout(carousel, 5000); // Change image every 5 seconds
+        }
+
+        // Sætter EVL på alle elementer med classen "filter", så de kalder funktionen "filtrering" ved click
+
+        function addEventListenerToButtons() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+        }
+
+        // Sætter EVL på alle elementer med classen "resetMenu", så de kalder funktionen "Resetmenuen" ved click
+
+
+        function addEventListenerToresetMenu() {
+            document.querySelectorAll(".resetMenu").forEach(elm => {
+                elm.addEventListener("click", ResetMenuen);
+            })
+        }
+
+        /* Fjerner data-containers og viser kategorierne og splashbillede mår man går tilbage på forside */
+        function menuForside() {
+            console.log("menu forside funktion");
+            document.getElementById("koed").style.display = "flex";
+            document.getElementById("vegetar").style.display = "flex";
+            document.getElementById("fisk").style.display = "flex";
+            document.getElementById("drikkevarer").style.display = "flex";
+            document.getElementById("splash").style.display = "block";
+
+            document.querySelector(".data-container").style.display = "none";
+
+
+            // tekst på forside mad-kategorierne
+            document.querySelector("#koed h1").textContent = "Kød";
+            document.querySelector("#fisk h1").textContent = "fisk";
+            document.querySelector("#vegetar h1").textContent = "vegetar";
+            document.querySelector("#drikkevarer h1").textContent = "drikkevarer";
+            // overskrift på splash billede //
+            // ALTID BRUG textContent men fordi her
+            // har vi brug for et line break <br>
+            // så derfor skal paragraphen opfattes som html element//
+
+            //tekst på splashbillede / MySlides
+            document.getElementById("overskrift").innerHTML = "Højbelagt smørrebrød";
+            document.getElementById("paragraphtxt").innerHTML = "Elsker du også smørrebrød? Om du er til de gode gamle klassikere, <br> eller gerne vil have et valg? - om du kun er til det grønne, eller hvis <br>du bare har lyst til lidt af det hele!";
+
+        }
+
+        // indsætter tekst i footeren, og bottom-menu i sidebaren i desktop.
+        function footer() {
+            document.querySelector("#footerSection h1").textContent = "Følg os på";
+            document.querySelector("#footerSection p").textContent = "@Copyright";
+            document.querySelector("#footerSection p+p").textContent = "All Rights Reserved";
+            document.querySelector("#footerSection p+p+p").tepxtContent = "@Copyright All Rights Reserved";
+            document.querySelector(".bottom-menu p").textContent = "Følg os på";
+        };
+
+        // er i tvivl om den bruges??
+        function clickMenu(luk) {
+            luk.classList.toggle("change");
+
+        }
+
+        //Mobil burgermmenu //
+
+
+        // toggler classen hidden på #menuMobil, og ændrer farven på burgermenuen til sort.
+
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#menuMobil").classList.toggle("hidden");
+            document.querySelector(".bar1").classList.toggle("black");
+            document.querySelector(".bar2").classList.toggle("black");
+            document.querySelector(".bar3").classList.toggle("black");
+        }
+
+        // tilføjer "hidden - display: none" til Menumobil, fjerner "change" så burgermenu'en skifter tilbage til 3 div'r, og toggler farven black.
+
+        function ResetMenuen() {
+            document.querySelector("#menuMobil").classList.toggle("hidden");
+
+            document.querySelector("#burgermenu").classList.remove("change"); // resetter animationen, se CSS linje 296-308.
+            document.querySelector(".bar1").classList.toggle("black");
+            document.querySelector(".bar2").classList.toggle("black");
+            document.querySelector(".bar3").classList.toggle("black");
+
+        }
+
+
+        // filtrering der snakker til data-kategorierne og kalder visRetter.
+        function filtrering() {
+            console.log(filtrering);
+            kategori = this.dataset.kategori;
+            document.querySelectorAll("button").forEach(knap => {
+                knap.classList.remove("valgt")
+            })
+            this.classList.add("valgt");
+            visRetter();
+        }
+
+
+        //Functionen der kloner alle articles som hentes fra google sheetet.
+
+        function visRetter() {
+            document.querySelector(".data-container").style.display = "grid";
+            container.innerHTML = "";
+            retter.feed.entry.forEach((ret) => {
+                if (kategori == "alle" || kategori == ret.gsx$kategori.$t) {
+                    const klon = temp.cloneNode(true).content;
+                    klon.querySelector("h2").textContent = ret.gsx$navn.$t;
+                    klon.querySelector("img").src = `billeder/${ret.gsx$billede.$t}.png`;
+                    klon.querySelector("img").alt = ret.gsx$billede.$t;
+                    klon.querySelector(".pris").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
+
+
+                    // skjuler forside mad-kategorierne når der trykkes ind i kategorierne. Lavet på den her måde, så alt vises på én index.html side, istedet for at have flere html'er.
+                    document.getElementById("koed").style.display = "none";
+                    document.getElementById("vegetar").style.display = "none";
+                    document.getElementById("fisk").style.display = "none";
+                    document.getElementById("drikkevarer").style.display = "none";
+                    document.getElementById("splash").style.display = "none";
+
+
+                    container.appendChild(klon);
+                    container.lastElementChild.addEventListener("click", () => {
+                        visSingle(ret)
+
+
+                    });
                 }
-                slideIndex++;
-                if (slideIndex > x.length) {
-                    slideIndex = 1
-                }
-                x[slideIndex - 1].style.display = "block";
-                setTimeout(carousel, 5000); // Change image every 5 seconds
-            }
+            })
+        }
 
-            // er i tvivl om den bruges??
-            function clickMenu(luk) {
-                luk.classList.toggle("change");
+        // Function der laver popup siden, og ligger eventlisterners på selve div'en og tilbage knappen.
+        function visSingle(ret) {
+            document.querySelector("#popUp").style.display = "flex";
+            document.querySelector("#popUp .luk").addEventListener("click", lukSingle);
+            document.querySelector("#popUp .lukPopUp").addEventListener("click", lukSingle);
+            document.querySelector("#popUp").addEventListener("click", lukSingle);
 
-            }
+            /* document.querySelector("#indhold").style.backgroundImage = "bill";*/
 
-            //Forside knap der viser alle mad kategorier og fjerner data-container/de filterede mad kategorier fra forsiden
+            document.querySelector(".enkeltRet h2").textContent = ret.gsx$navn.$t;
+            document.querySelector(".enkeltRet .billede").src = `billeder/${ret.gsx$billede.$t}.png`;
+            document.querySelector(".enkeltRet .billede").alt = ret.gsx$navn.$t;
+            document.querySelector(".pris").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
 
-            function addEventListenerToresetMenu() {
-                document.querySelectorAll(".resetMenu").forEach(elm => {
-                    elm.addEventListener("click", ResetMenuen);
-                })
-            }
+            document.querySelector(".kort").textContent = ret.gsx$kort.$t;
+            document.querySelector(".køb").textContent = `Køb`;
+            document.querySelector(".anuller").textContent = `Annuller`;
 
-            function ResetMenuen() {
-                document.querySelector("#menuMobil").classList.add("hidden");
+            document.querySelector(".luk").style.display = " none";
 
-                document.querySelector("#burgermenu").classList.remove("change");
-                document.querySelector(".bar1").classList.toggle("black");
-                document.querySelector(".bar2").classList.toggle("black");
-                document.querySelector(".bar3").classList.toggle("black");
+            document.querySelector(".prisDesktop").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
+            document.querySelector(".kortDesktop").textContent = ret.gsx$kort.$t;
 
-            }
-            /* Fjerner data-containers og viser kategorierne og splashbillede mår man går tilbage på forside */
-            function menuForside() {
-                console.log("menu forside funktion");
-                document.getElementById("koed").style.display = "flex";
-                document.getElementById("vegetar").style.display = "flex";
-                document.getElementById("fisk").style.display = "flex";
-                document.getElementById("drikkevarer").style.display = "flex";
-                document.getElementById("splash").style.display = "block";
+        }
 
-                document.querySelector(".data-container").style.display = "none";
+        // Lukker popUp vinduet.
+        function lukSingle() {
+            document.querySelector("#popUp").style.display = "none";
+        }
+    </script>-->
 
+    <script src="script.js"></script>
 
-                // tekst på forside mad-kategorierne
-                document.querySelector("#koed h1").textContent = "Kød";
-                document.querySelector("#fisk h1").textContent = "fisk";
-                document.querySelector("#vegetar h1").textContent = "vegetar";
-                document.querySelector("#drikkevarer h1").textContent = "drikkevarer";
-                // overskrift på splash billede //
-                // ALTID BRUG textContent men fordi her
-                // har vi brug for et line break <br>
-                // så derfor skal paragraphen opfattes som html element//
-
-                //tekst på splashbillede / MySlides
-                document.getElementById("overskrift").innerHTML = "Højbelagt smørrebrød";
-                document.getElementById("paragraphtxt").innerHTML = "Elsker du også smørrebrød? Om du er til de gode gamle klassikere, <br> eller gerne vil have et valg? - om du kun er til det grønne, eller hvis <br>du bare har lyst til lidt af det hele!";
-
-            }
-
-            // Sætter EVL på alle "filter" elementer, så de kalder "filtrering" ved click
-
-            function addEventListenerToButtons() {
-                document.querySelectorAll(".filter").forEach(elm => {
-                    elm.addEventListener("click", filtrering);
-                })
-            }
-
-            // filtrering der snakker til data-kategorierne og kalder visRetter.
-            function filtrering() {
-                console.log(filtrering);
-                kategori = this.dataset.kategori;
-                document.querySelectorAll("button").forEach(knap => {
-                    knap.classList.remove("valgt")
-                })
-                this.classList.add("valgt");
-                visRetter();
-            }
-
-
-            //Functionen der kloner alle articles som hentes fra google sheetet.
-
-            function visRetter() {
-                document.querySelector(".data-container").style.display = "grid";
-                container.innerHTML = "";
-                retter.feed.entry.forEach((ret) => {
-                    if (kategori == "alle" || kategori == ret.gsx$kategori.$t) {
-                        const klon = temp.cloneNode(true).content;
-                        klon.querySelector("h2").textContent = ret.gsx$navn.$t;
-                        klon.querySelector("img").src = `billeder/${ret.gsx$billede.$t}.png`;
-                        klon.querySelector("img").alt = ret.gsx$billede.$t;
-                        klon.querySelector(".pris").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
-
-
-                        // skjuler forside mad-kategorierne når der trykkes ind i kategorierne. Lavet på den her måde, så alt vises på én index.html side, istedet for at have flere html'er.
-                        document.getElementById("koed").style.display = "none";
-                        document.getElementById("vegetar").style.display = "none";
-                        document.getElementById("fisk").style.display = "none";
-                        document.getElementById("drikkevarer").style.display = "none";
-                        document.getElementById("splash").style.display = "none";
-
-
-                        container.appendChild(klon);
-                        container.lastElementChild.addEventListener("click", () => {
-                            visSingle(ret)
-
-
-                        });
-                    }
-                })
-            }
-
-
-            // Function der laver popup siden, og ligger eventlisterners på selve div'en og tilbage knappen.
-            function visSingle(ret) {
-                document.querySelector("#popUp").style.display = "flex";
-                document.querySelector("#popUp .luk").addEventListener("click", lukSingle);
-                document.querySelector("#popUp .lukPopUp").addEventListener("click", lukSingle);
-
-                /* document.querySelector("#indhold").style.backgroundImage = "bill";*/
-
-                document.querySelector(".enkeltRet h2").textContent = ret.gsx$navn.$t;
-                document.querySelector(".enkeltRet .billede").src = `billeder/${ret.gsx$billede.$t}.png`;
-                document.querySelector(".enkeltRet .billede").alt = ret.gsx$navn.$t;
-                document.querySelector(".pris").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
-
-                document.querySelector(".kort").textContent = ret.gsx$kort.$t;
-                document.querySelector(".køb").textContent = `Køb`;
-                document.querySelector(".anuller").textContent = `Annuller`;
-
-                document.querySelector(".luk").style.display = " none";
-
-
-
-                document.querySelector(".prisDesktop").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
-                document.querySelector(".kortDesktop").textContent = ret.gsx$kort.$t;
-
-            }
-            // Lukker popUp vinduet.
-            function lukSingle() {
-                document.querySelector("#popUp").style.display = "none";
-            }
-
-            //Mobil burgermmenu //
-
-            // toggler classen hidden på #menuMobil, og ændrer farven på burgermenuen til sort.
-
-            function toggleMenu() {
-                console.log("toggleMenu");
-                document.querySelector("#menuMobil").classList.toggle("hidden");
-                document.querySelector(".bar1").classList.toggle("black");
-                document.querySelector(".bar2").classList.toggle("black");
-                document.querySelector(".bar3").classList.toggle("black");
-            }
-            // indsætter tekst i footeren, og bottom-menu i sidebaren i desktop.
-            function footer() {
-                document.querySelector("#footerSection h1").textContent = "Følg os på";
-                document.querySelector("#footerSection p").textContent = "@Copyright";
-                document.querySelector("#footerSection p+p").textContent = "All Rights Reserved";
-                document.querySelector("#footerSection p+p+p").tepxtContent = "@Copyright All Rights Reserved";
-                document.querySelector(".bottom-menu p").textContent = "Følg os på";
-            };
-        </script>
-
-
-    </div>
 </body></html>
