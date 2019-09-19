@@ -109,6 +109,7 @@ function footer() {
 function clickMenu(luk) {
     luk.classList.toggle("change");
 
+
 }
 
 //Mobil burgermmenu //
@@ -119,6 +120,11 @@ function clickMenu(luk) {
 function toggleMenu() {
     console.log("toggleMenu");
     document.querySelector("#menuMobil").classList.toggle("hidden");
+
+    document.querySelector("#body").classList.toggle("overflow");
+
+
+
     document.querySelector(".bar1").classList.toggle("black");
     document.querySelector(".bar2").classList.toggle("black");
     document.querySelector(".bar3").classList.toggle("black");
@@ -128,6 +134,9 @@ function toggleMenu() {
 
 function ResetMenuen() {
     document.querySelector("#menuMobil").classList.toggle("hidden");
+    document.querySelector("#body").classList.toggle("overflow");
+
+    document.querySelector(".burgermenu").style.position = "initial";
 
     document.querySelector("#burgermenu").classList.remove("change"); // resetter animationen, se CSS linje 296-308.
     document.querySelector(".bar1").classList.toggle("black");
@@ -201,10 +210,12 @@ function visSingle(ret) {
 
     document.querySelector(".prisDesktop").textContent = `Pris: ${ret.gsx$pris.$t}.- `;
     document.querySelector(".kortDesktop").textContent = ret.gsx$kort.$t;
+    document.querySelector("#body").classList.toggle("overflow");
 
 }
 
 // Lukker popUp vinduet.
 function lukSingle() {
     document.querySelector("#popUp").style.display = "none";
+    document.querySelector("#body").classList.remove("overflow");
 }
