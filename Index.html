@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body class="baggrundsbillede">
@@ -29,11 +30,8 @@
                             <li><a class="filter" data-kategori="Fisk">Fisk</a></li>
                             <li><a class="filter" data-kategori="Vegetar">Vegetar</a></li>
                             <li><a class="filter" data-kategori="drikkevarer">Drikkevarer</a></li>
-                            <!--<li><a href="index.html">Om Os</a></li>
-                        <li><a href="index.html">Kontakt</a> </li>-->
                         </ul>
                     </div>
-
                     <div id="kontakt-menu" class="kontakt-menu">
                         <ul>
                             <li><a href="index.html">Om Os</a></li>
@@ -43,7 +41,7 @@
                     <div class="bottom-menu">
                         <div class="socialsDesktop">
                             <p></p>
-                            <div class="socialBox">
+                            <div id="socialBox" class="socialBox">
                                 <a href="index.html" class="fa fa-facebook"></a>
                                 <a href="index.html" class="fa fa-google"></a>
                                 <a href="index.html" class="fa fa-instagram"></a>
@@ -74,7 +72,10 @@
                     </div>
                     <section id="menuMobil" class="hidden">
                         <ul id="menu"></ul>
-                        <li><a href="index.html" class="active resetMenu">Forside</a></li>
+
+
+                        <li> <a href="index.html" class=" resetMenu"><img src="Logo/Logo.svg" alt="logo"></a></li>
+                        <li><a href="index.html" class=" resetMenu">Forside</a></li>
                         <li><a class="filter resetMenu" data-kategori="Kød" onclick="clickMenu(this)">Kød</a></li>
                         <li><a class="filter resetMenu" data-kategori="Fisk">Fisk</a></li>
                         <li><a class="filter resetMenu" data-kategori="Vegetar">Vegetar</a></li>
@@ -119,31 +120,22 @@
             <div id="popUp">
                 <div class="lukPopUp">
                     <section class=" indhold">
-
-
                         <article class="enkeltRet indholdBillede">
                             <div class="popUpDesktop ">
                                 <a href="index.html"><img src="Logo/Logo.svg" alt="logo"></a>
-
                                 <p class="kortDesktop"></p>
-
                                 <p class="prisDesktop"></p>
-
-
                             </div>
-
-
                             <div class="popUpMobil">
                                 <div class="logoBillede  "></div>
-
-
                                 <img class="billede" src="" alt="">
                                 <h2></h2>
                                 <p class="kort"></p>
                                 <p class="pris"></p>
-                                <div class="buttonContainer"> <button class="køb"></button>
-                                    <button class="anuller"></button></div>
-
+                                <div class="buttonContainer">
+                                    <button class="køb"></button>
+                                    <button class="anuller"></button>
+                                </div>
                                 <button class="luk">X</button>
                             </div>
                         </article>
@@ -156,8 +148,6 @@
                 <article>
                     <h2></h2>
                     <div class="billedeContainer"><img src="" alt=""></div>
-
-
                     <p class="pris"></p>
                 </article>
             </template>
@@ -167,7 +157,7 @@
                 <h1></h1>
                 <div class="socials">
                     <div class="socialBox">
-                        <a href="index.html" class="fa fa-facebook"></a>
+                        <a href="" class="fa fa-facebook"></a>
                         <a href="index.html" class="fa fa-google"></a>
                         <a href="index.html" class="fa fa-instagram"></a>
                     </div>
@@ -335,7 +325,7 @@
 
             // Function der laver popup siden, og ligger eventlisterners på selve div'en og tilbage knappen.
             function visSingle(ret) {
-                document.querySelector("#popUp").style.display = "block";
+                document.querySelector("#popUp").style.display = "flex";
                 document.querySelector("#popUp .luk").addEventListener("click", lukSingle);
                 document.querySelector("#popUp .lukPopUp").addEventListener("click", lukSingle);
 

@@ -54,25 +54,35 @@ header {
     border-right: 1px solid #d9d9d9;
     box-shadow: 0 0 16px -6px #000000;
     -webkit-box-shadow: 0 0 16px -6px #000000;
+    text-decoration: none;
+    transition: 0.3s;
+
+
+
+    font-size: 2.7rem;
+    cursor: pointer;
 }
 
 #menu-sidebar a {
     text-decoration: none;
     transition: 0.3s;
-    font-family: 'Open Sans', sans-serif;
 
 
-    font-size: 3rem;
+
+
     cursor: pointer;
 
 }
 
+
 #menu-sidebar a:hover {
-    color: #f85858;
-    box-shadow: -5px 18px 22px -20px rgba(0, 0, 0, 0.9);
+    color: #454242;
+    /*
     transform: scale(1.1);
     filter: brightness(1.5);
-    left: 5%;
+    left: 5%;*/
+
+
 }
 
 
@@ -103,18 +113,26 @@ header {
     bottom: 0;
     height: 112px;
     width: 200px;
+    color: lightgrey;
+}
+
+
+.socialBox,
+#socialBox {
+    text-align: center;
+    font: normal normal normal 14px/1 FontAwesome;
 }
 
 .kontakt-menu {
     position: fixed;
     bottom: 120px;
 
-
 }
 
 #kontakt-menu a {
     color: lightgrey;
     font-size: 2rem;
+
 }
 
 .bottom-menu p {
@@ -174,7 +192,8 @@ li {
     grid-template-rows: 100px;
     background-image: url(navbillede/navbillede.jpg);
     width: 100vw;
-    height: 100px;
+    height: 115px;
+
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -200,7 +219,7 @@ nav {}
     position: absolute;
     width: 100vw;
     min-height: 500px;
-    background-color: #fdfdfd;
+    background-color: rgb(176, 203, 165);
     z-index: 5000;
     position: absolute;
     top: 0;
@@ -213,18 +232,37 @@ nav {}
 }
 
 
+#menuMobil img {
+    width: 30%;
+}
+
 
 #menuMobil a {
-    padding-top: 20px;
-    padding-bottom: 20px;
+
     text-align: center;
-    font-size: 16px;
+    font-size: 2.3rem;
     text-decoration: none;
-    color: black;
+    color: white;
     display: block;
     line-height: 2;
 
+
 }
+
+#menuMobil a:hover {
+    color: #622626;
+}
+
+#menuMobil li {
+    border-bottom: 1px solid white;
+}
+
+
+
+#menuMobil li:first-child {
+    border-bottom: none;
+}
+
 
 .burgermenu {
     padding-top: 20px;
@@ -322,7 +360,7 @@ main article {
 
 article {
     /* bruges til mad-kategori billeder, som er articles udenfor main */
-
+    transition: all 0.8s ease 0s;
     min-height: 10px;
     display: flex;
 
@@ -333,12 +371,12 @@ article h2 {
     color: black;
     text-align: center;
     position: relative;
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin: 0;
     margin: 20px auto;
 
     padding-bottom: 5px;
-    font-family: 'Montserrat', sans-serif;
+
 
 }
 
@@ -371,7 +409,7 @@ article .pris {
     grid-template-columns: repeat (1, 1fr);
     grid-auto-rows: auto;
     grid-gap: 3px;
-    margin-top: 5px;
+
     cursor: pointer;
     transition: 0.8s ease;
     backface-visibility: hidden;
@@ -410,7 +448,7 @@ article .pris {
 }
 
 .item {
-    height: 100px;
+    height: 115px;
     width: 100%;
 }
 
@@ -471,14 +509,18 @@ article h1 {
 /* Pop op vindue START */
 
 #popUp {
+
     position: fixed;
-    width: 100vw;
-    height: 100vh;
     top: 0;
-    background: #CFD2DB;
+    height: 100vh;
+    width: 100vw;
+
+    background: rgba(44, 44, 44, 0.77);
     display: none;
     text-align: center;
     z-index: 8100;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -496,11 +538,11 @@ article h1 {
 }
 
 .indholdBillede {
-    background-image: url(navbillede/pop-updesignide.png);
+    background-image: url(navbillede/baggrund_popup.png);
     background-size: auto;
     width: 100%;
     min-height: 300px;
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
 
 }
@@ -519,8 +561,7 @@ article h1 {
     align-items: center;
     justify-content: center;
     justify-content: space-evenly;
-    margin-right: 100px;
-    margin-left: 100px;
+
 }
 
 #popUp button {
@@ -627,39 +668,42 @@ article h1 {
 
 /* overskrift på splash slut */
 /* footer */
+
+
 .fa {
-    box-sizing: content-box;
-    display: block;
-    padding: 15px;
-    font-size: 1.5rem;
-    width: 20px;
+    padding: 10px;
+    font-size: 40px;
+    width: 40px;
     text-align: center;
     text-decoration: none;
-    margin: 4px 3px;
-    border-radius: 100%;
-    height: 20px;
+    border-radius: 90%
 }
 
+/* Add a hover effect if you want */
 .fa:hover {
-    opacity: 1;
-    color: darksalmon;
-
+    opacity: 0.7;
 }
 
+/* Set a specific color for each brand */
+
+/* Facebook */
 .fa-facebook {
-    background: black;
+    background: rgba(59, 89, 152, 0.7);
     color: white;
 }
 
-.fa-google {
-    background: black;
-    color: white;
-}
-
+/* Instagram */
 .fa-instagram {
-    background: black;
+    background: rgba(193, 53, 132, 0.7);
     color: white;
 }
+
+/*/ Gmail /*/
+.fa-google {
+    background: rgba(221, 75, 57, 0.7);
+    color: white;
+}
+
 
 
 
@@ -683,7 +727,6 @@ article h1 {
 }
 
 
-.socialsDesktop {}
 
 #splash {
     width: 100%;
@@ -797,14 +840,19 @@ article h1 {
         line-height: normal;
     }
 
+    .MenuMobilBox,
+    .item {
+        height: 140px;
+    }
+
 
 }
 
 @media only screen and (min-width: 940px) {
 
     .indholdBillede {
-        background-image: url(navbillede/940elevermedstaadreng.png);
-        background-position: auto;
+        background-image: url(navbillede/baggrund_popup.png);
+        background-size: cover;
 
 
     }
@@ -841,9 +889,9 @@ article h1 {
     }
 
     #popUp button {
-        width: 160px;
-        height: 80px;
-        font-size: 3rem;
+        width: 120px;
+        height: 65px;
+        font-size: 2.5rem;
     }
 
     .kortDesktop {
@@ -854,6 +902,12 @@ article h1 {
         font-weight: 400;
         line-height: 35px;
 
+    }
+
+    .buttonContainer {
+
+        margin-right: 100px;
+        margin-left: 100px;
     }
 
 
@@ -894,10 +948,11 @@ article h1 {
 
     #footerSection {
         position: relative;
-        left: 200px;
+        padding-left: 200px;
+
 
         /* margin-right: 200px; */
-        padding-right: 200px;
+
 
     }
 
