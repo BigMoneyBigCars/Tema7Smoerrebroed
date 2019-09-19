@@ -53,8 +53,10 @@ header {
     -webkit-box-shadow: 0 0 16px -6px #000000;
     text-decoration: none;
     transition: 0.3s;
-    font-size: 26.5px;
+    font-size: 26px;
     cursor: pointer;
+    display: none;
+
 }
 
 #menu-sidebar a {
@@ -79,19 +81,30 @@ header {
 
 }
 
+.flexMenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 111px;
+}
 
 .top-menu {
     text-align: center;
-    margin-top: 25px;
-    padding-bottom: 25px;
+
+    flex-grow: 1;
+    flex-basis: 80px;
 }
 
 
 .middle-menu {
     border: 0px solid;
-    position: fixed;
-    top: 35%;
+
     width: 200px;
+
+    flex-grow: 1;
+    flex-basis: 80px;
+
+
 
 }
 
@@ -108,6 +121,7 @@ header {
     height: 112px;
     width: 200px;
     color: lightgrey;
+
 }
 
 
@@ -118,8 +132,12 @@ header {
 }
 
 .kontakt-menu {
-    position: fixed;
+
     bottom: 120px;
+    flex-grow: 1;
+    flex-basis: 111px;
+    justify-content: flex-end;
+    align-content: flex-end;
 
 }
 
@@ -147,8 +165,9 @@ li {
 
 
     list-style-type: none;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
 }
 
 
@@ -249,6 +268,8 @@ nav {}
 
 #menuMobil li {
     border-bottom: 1px solid white;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 
@@ -788,6 +809,21 @@ footer p {
 /* Splash billede SLUT */
 
 /* media queries START */
+
+
+@media only screen and (min-height: 910px) {
+
+    #menu-sidebar li {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    #top-menu {
+        margin-top: 25px;
+
+    }
+}
+
 @media only screen and (min-width: 650px) {
 
     .logoBillede {
@@ -970,7 +1006,7 @@ footer p {
     }
 
     #menu-sidebar {
-        display: block;
+        display: flex;
     }
 
     #mobil-top-Menu {
